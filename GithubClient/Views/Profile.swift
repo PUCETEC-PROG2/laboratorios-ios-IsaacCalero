@@ -10,15 +10,23 @@ import SwiftUI
 struct Profile: View {
     var body: some View {
         NavigationStack{
-            VStack{
-                Text("Perfil del usuario")
+            VStack (alignment: .leading){
+                Text("Isaac Calero")
+                    .font(.title)
+                Image(uiImage: .githubLogo)
+                    .resizable()
+                    .scaledToFit()
+                Text("IsaacCalero")
+                    .font(.headline)
+                    .padding(.vertical)
+                Text("Estudiante de desarrollo de software")
+                    .font(.caption)
             }
-            .navigationTitle("Perfil del usuario")
-            .navigationBarTitleDisplayMode(.inline)
+            .padding()
+            .navigationTitle("Perfil")
         }
     }
-}
-
+}	
 #Preview {
     Profile()
 }
