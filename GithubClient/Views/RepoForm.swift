@@ -2,7 +2,7 @@
 //  RepoForm.swift
 //  GithubClient
 //
-//  Created by Isaac Calero on 7/7/26.
+//  Created by Usuario invitado on 7/7/26.
 //
 
 import SwiftUI
@@ -14,10 +14,12 @@ struct RepoForm: View {
     var body: some View {
         NavigationStack {
             VStack {
+                Spacer()
+                
                 TextField(
                     "",
                     text: $repoName,
-                    prompt: Text("Nombre del Repositorio")
+                    prompt: Text("Nombre del repositorio")
                         .foregroundStyle(.black.opacity(0.4))
                 )
                 .textFieldStyle(.roundedBorder)
@@ -26,7 +28,7 @@ struct RepoForm: View {
                 TextField(
                     "",
                     text: $repoDescription,
-                    prompt: Text("Descripción del Repositorio")
+                    prompt: Text("Descripción del repositorio")
                         .foregroundStyle(.black.opacity(0.4))
                 )
                 .textFieldStyle(.roundedBorder)
@@ -38,25 +40,27 @@ struct RepoForm: View {
                 HStack {
                     Button(action: {
                         print("Botón presionado")
-                    }) {
-                        Label("Guardar", systemImage: "square.and.arrow.down")
-                            .padding(.all, 4)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    
-                    Button(action: {
-                        print("Botón presionado")
-                    }) {
+                    }){
                         Label("Cancelar", systemImage: "xmark.circle")
                             .padding(.all, 4)
                             .foregroundStyle(.red)
                     }
+                    .buttonStyle(.bordered)
+                    .padding(.horizontal, 4)
+                    
+                    Button(action: {
+                        print("Botón presionado")
+                    }){
+                        Label("Guardar", systemImage: "square.and.arrow.down")
+                            .padding(.all, 4)
+                    }
                     .buttonStyle(.borderedProminent)
-                    .tint(.gray.opacity(0.5))
                     .padding(.horizontal, 4)
                 }
+                
             }
-            .navigationTitle("Formulario del Repositorio")
+            .padding()
+            .navigationTitle("Formulario de repositorio")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

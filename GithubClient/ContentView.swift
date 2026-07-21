@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView{
+        TabView {
             RepoList()
-                .tabItem{
-                    Label("Repositorios", systemImage: "arrow.trianglehead.branch")
+                .tabItem {
+                    Label("Repositorios",
+                          systemImage: "arrow.trianglehead.branch")
                 }
             RepoForm()
                 .tabItem {
                     Label("Crear Repositorio",
-                    systemImage: "plus")
+                          systemImage: "plus")
                 }
             Profile()
                 .tabItem {
-                    Label("Perfil de Usuario", systemImage: "person.crop.circle")
+                    Label("Perfil de usuario",
+                          systemImage: "person.crop.circle")
                 }
         }
     }
