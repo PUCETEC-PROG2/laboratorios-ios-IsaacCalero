@@ -16,9 +16,22 @@
 		AC15474E2F16A0A300962CDB /* GithubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AC1AD98E300FFAF800FBADD8 /* Exceptions for "GithubClient" folder in "GithubClient" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/.gitignore,
+			);
+			target = AC15474D2F16A0A300962CDB /* GithubClient */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AC1547502F16A0A300962CDB /* GithubClient */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AC1AD98E300FFAF800FBADD8 /* Exceptions for "GithubClient" folder in "GithubClient" target */,
+			);
 			path = GithubClient;
 			sourceTree = "<group>";
 		};

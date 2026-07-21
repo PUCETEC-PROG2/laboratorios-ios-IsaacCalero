@@ -2,7 +2,7 @@
 //  GithubService.swift
 //  GithubClient
 //
-//  Created by Pablo Pérez Martínez on 14/7/26.
+//  Created by Isaac Calero on 14/7/26.
 //
 
 import Foundation
@@ -29,7 +29,8 @@ class GithubService {
                 "sort": "created",
                 "direction": "desc",
                 "per_page": 100,
-                "affiliation": "owner"
+                "affiliation": "owner",
+                "t": NSDate().timeIntervalSince1970
             ],
             headers: headers
         )
@@ -63,5 +64,37 @@ class GithubService {
 
             throw error
         }
+    }
+    
+    func createRepository (name: String, desc: String) async throws -> Repository {
+        let response = await AF.request(
+            "\(baseUrl)/user/repos",
+            method: .post,
+            parameters: [
+                "name" : name,
+                "description": desc
+            ],
+            encoding: JSONEncoding.default,
+            headers: headers,
+            
+        ).validate()
+            .serializingDecodable(Repository.self)
+            .response
+        
+        if let data = response.data,
+           let json = String(data: data, encoding: .utf8) {
+            print("Response Body:")
+            print(json)
+        }
+
+        switch response.result {
+        case .success( let repo):
+            return repo
+        case .failure(let error):
+            print("=== Alamofire Error ===")
+            print(error)
+            throw error
+        }
+        
     }
 }

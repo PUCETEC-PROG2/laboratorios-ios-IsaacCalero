@@ -2,7 +2,7 @@
 //  Repository.swift
 //  GithubClient
 //
-//  Created by Pablo Pérez Martínez on 14/7/26.
+//  Created by Isaac Calero on 14/7/26.
 //
 
 import Foundation
